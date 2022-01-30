@@ -1,7 +1,5 @@
 slack::help() {
   cat << 'EOF'
-Send messages via slack - https://github.com/sschmid/bee-slack
-
 secrets:
 
   SLACK_WEBHOOK
@@ -15,11 +13,7 @@ usage:
                                                             e.g. bee slack message ABCD12345 "Build complete"
   upload <channels> <message> <file> [<parent-timestamp]>   send a message and upload a file using https://slack.com/api/files.upload
 
-bee dependencies:
-
-  none
-
-dependencies:
+requirements:
 
   slack   https://slack.com
   curl

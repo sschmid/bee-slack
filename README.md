@@ -1,29 +1,24 @@
 # slack
 Send messages via slack
 
-## `slack::message_webhook <message>`
-Send a message using incoming webhooks
+https://github.com/sschmid/bee-slack
 
-### Example
-```sh
-bee slack::message_webhook "Build complete"
 ```
+secrets:
 
-## `slack::message <channel> <message> [<parent-timestamp>]`
-Send a message using https://slack.com/api/chat.postMessage
+  SLACK_WEBHOOK
+  SLACK_TOKEN
 
-### Example
-```sh
-bee slack::message ABCD12345 "Build complete"
+usage:
+
+  message_webhook                                           send a message using incoming webhooks
+                                                            e.g. bee slack message_webhook "Build complete"
+  message <channel> <message> [<parent-timestamp>]          send a message using https://slack.com/api/chat.postMessage
+                                                            e.g. bee slack message ABCD12345 "Build complete"
+  upload <channels> <message> <file> [<parent-timestamp]>   send a message and upload a file using https://slack.com/api/files.upload
+
+requirements:
+
+  slack   https://slack.com
+  curl
 ```
-
-## `slack::upload <channels> <message> <file> [<parent-timestamp]>`
-Send a message and upload a file using https://slack.com/api/files.upload
-
-----------------------------------------
-
-## Dependencies
-
-### 3rd party
-- `Slack` - https://slack.com
-- `curl`
